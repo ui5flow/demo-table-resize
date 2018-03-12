@@ -1,0 +1,38 @@
+<mvc:View controllerName="com.oprtnl.demos.gridTableScrollbar.exec.controller.Master" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table" xmlns="sap.m" height="100%" displayBlock="true">
+    <Page id="master" showNavButton="false" title="Grid Table vertical autoresize" width="100%" showHeader="true" floatingFooter="false" class="sapUiNoContentPadding" height="100%">
+        <content>
+            <Panel expandable="true" expanded="false" headerText="Open/Close" width="auto" class="sapUiNoContentPadding" expand="onPanelExpand">
+                <content>
+                    <Text class="sapUiResponsiveMargin" text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" />
+                </content>
+            </Panel>
+            <t:Table id="table" rows="{mockData>/users}" visibleRowCountMode="Auto">
+                <t:toolbar>
+                    <Toolbar>
+                        <Title id="title" text="Users"></Title>
+                    </Toolbar>
+                </t:toolbar>
+                <t:columns>
+                    <t:Column filterProperty="Name" resizable="true" autoResizable="true">
+                        <Label text="First name" />
+                        <t:template>
+                            <Text text="{mockData>first_name}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                    <t:Column width="{ui>/widths/category}" resizable="true">
+                        <Label text="Last name" />
+                        <t:template>
+                            <Text text="{mockData>last_name}" wrapping="false" />
+                        </t:template>
+                    </t:Column>
+                </t:columns>
+            </t:Table>
+        </content>
+        <footer>
+            <Toolbar>
+                <Button id="bShowMessages" icon="sap-icon://message-popup" text="" type="Emphasized" press="showMessagePopover" visible="false" />
+                <ToolbarSpacer/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
